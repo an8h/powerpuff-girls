@@ -12,8 +12,8 @@ import PageNotFound from "../components/PageNotFound/index";
 
 const Routes = () => (
   <Switch>
-    <Route path="/" render={(props) => <Home {...props} />} />
-    <Route path="/detail" render={(props) => <DetailPage {...props} />} />
+    <Route path="/" exact component={Home} />
+    <Route path="/detail" component={DetailPage} />
     <Route component={PageNotFound} />
   </Switch>
 );
