@@ -1,0 +1,27 @@
+.container {
+  padding: 20px 40px 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  margin: 20px 20px 0 30px;
+  width: 200px;
+  object-fit: contain;
+  align-self: flex-start;
+  border-radius: 25px;
+}
+
+.text {
+  margin: 20px 20px 0 30px;
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .image {
+    align-self: center;
+  }
+}
