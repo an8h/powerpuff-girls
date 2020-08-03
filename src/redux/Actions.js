@@ -4,7 +4,6 @@
 Actions for:
 Movie
 Episodes
-Episode
 
 Each Action has three different dispatch states:
 _LOADING
@@ -28,10 +27,6 @@ export function action(type: string, id: string) {
         response = await ApiConnect.getEpisodes(id);
         break;
       }
-      case "EPISODE": {
-        response = await ApiConnect.getEpisode(id);
-        break;
-      }
 
       default:
         break;
@@ -50,7 +45,4 @@ export function getMovie(movieId: string) {
 }
 export function getEpisodes(movieId: string) {
   return action(types[1] === "EPISODES" ? types[1] : "EPISODES", movieId);
-}
-export function getEpisode(movieId: string) {
-  return action(types[2] === "EPISODE" ? types[2] : "EPISODE", movieId);
 }

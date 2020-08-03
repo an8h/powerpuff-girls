@@ -66,31 +66,3 @@ export function getEpisodes(
       return state;
   }
 }
-
-export function getEpisode(
-  state: Object = DefaultState.episode,
-  action: Function
-) {
-  switch (action.type) {
-    case "GET_EPISODE_LOADING":
-      return {
-        ...state,
-        isLoading: true,
-      };
-    case "GET_EPISODE_FAIL":
-      return {
-        ...state,
-        isLoading: false,
-        // errors: action.movie,
-      };
-    case "GET_EPISODE_SUCCESS":
-      return {
-        ...state,
-        // data: action.movie.data,
-        isLoading: false,
-        errors: [],
-      };
-    default:
-      return state;
-  }
-}

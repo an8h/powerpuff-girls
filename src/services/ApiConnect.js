@@ -4,7 +4,6 @@
 API calls for:
 Movie
 Episodes
-Episode
 */
 
 import axios from "axios";
@@ -20,5 +19,4 @@ const getData = (url) => {
 export default {
   getMovie: (id: string) => getData(`${BASE_URL}/shows/${id}`),
   getEpisodes: (id: string) => getData(`${BASE_URL}/shows/${id}/episodes`),
-  getEpisode: (id: string) => getData(`${BASE_URL}/episodes/${id}`),
 };
