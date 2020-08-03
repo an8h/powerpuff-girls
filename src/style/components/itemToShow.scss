@@ -17,6 +17,10 @@
   flex: 1 1 auto;
 }
 
+.header {
+  color: $pink;
+}
+
 @media screen and (max-width: 800px) {
   .container {
     flex-direction: column;

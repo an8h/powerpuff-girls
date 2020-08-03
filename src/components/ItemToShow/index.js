@@ -35,7 +35,7 @@ const ItemToShow = (props: Object) => {
           />
 
           <div className="text">
-            <h2>{name}</h2>
+            <h2 className="header">{name}</h2>
             <div
               dangerouslySetInnerHTML={{
                 __html: summary,

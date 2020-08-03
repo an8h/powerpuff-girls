@@ -21,7 +21,7 @@ const Episodes = (props: Object) => {
 
   return (
     <div className="table-container">
-      <Table>
+      <Table striped>
         <thead>
           <tr>
             <th>Number</th>

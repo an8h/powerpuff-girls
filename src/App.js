@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import Store from "./redux/Store";
 import Routes from "./routes/Routes";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/_main.scss";
 
 const App = () => {
