@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemToshow Component should render correctly 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <img
+      alt="This is a test name"
+      className="image"
+      onError={[Function]}
+      src=""
+    />
+    <div
+      className="text"
+    >
+      <h2
+        className="header"
+      >
+        This is a test name
+      </h2>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "This is a test summary",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

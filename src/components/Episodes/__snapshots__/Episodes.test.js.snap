@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Episodes Component should render correctly 1`] = `
+<div
+  className="table-container"
+>
+  <table
+    className="table table-striped"
+  >
+    <thead>
+      <tr>
+        <th>
+          Number
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Title
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        onClick={[Function]}
+      >
+        <th
+          scope="row"
+        >
+          1
+        </th>
+        <td>
+          2020-01-03
+        </td>
+        <td>
+          This is a test name
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
