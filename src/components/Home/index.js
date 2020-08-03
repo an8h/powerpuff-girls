@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 // @flow
 
 /* 
@@ -13,6 +14,8 @@ import { connect } from "react-redux";
 import { mapDispachToProps } from "../../redux/Store";
 import ItemToShow from "../ItemToShow/index";
 import Episodes from "../Episodes/index";
+import Loading from "../Loading/index";
+import ErrorMessage from "../ErrorMessage/index";
 import { MOVIE_ID } from "../../config";
 import groupEpisodesBySeasons from "../../utils";
 
@@ -21,8 +24,10 @@ type Props = {
   getEpisodes: Function,
   movie: Object,
   movieIsLoading: Boolean,
+  movieError: Array<string>,
   episodes: Object,
   episodesIsLoading: Boolean,
+  episodesError: Array<string>,
 };
 
 class Home extends React.Component<Props> {
@@ -35,20 +40,40 @@ class Home extends React.Component<Props> {
   }
 
   render() {
-    const { movie, movieIsLoading, episodes, episodesIsLoading } = this.props;
+    const {
+      movie,
+      movieIsLoading,
+      movieError,
+      episodes,
+      episodesIsLoading,
+      episodesError,
+    } = this.props;
     const episodesBySeasons = groupEpisodesBySeasons(episodes);
 
     return (
       <div>
-        <ItemToShow item={movie} />
-        {Object.keys(episodesBySeasons).map((key) => {
-          return (
-            <div key={key}>
-              <h1>Season {key}</h1>
-              <Episodes key={key} episodes={episodesBySeasons[key]} />
-            </div>
-          );
-        })}
+        {movieIsLoading ? (
+          <Loading />
+        ) : movieError.length <= 0 ? (
+          <ItemToShow item={movie} />
+        ) : (
+          <ErrorMessage />
+        )}
+
+        {episodesIsLoading ? (
+          <Loading />
+        ) : episodesError.length <= 0 ? (
+          Object.keys(episodesBySeasons).map((key) => {
+            return (
+              <div key={key}>
+                <h1>Season {key}</h1>
+                <Episodes key={key} episodes={episodesBySeasons[key]} />
+              </div>
+            );
+          })
+        ) : (
+          <ErrorMessage />
+        )}
       </div>
     );
   }
@@ -59,8 +84,10 @@ const mapStateToProps = (state, ownProps) => {
     ...ownProps,
     movie: state.getMovie.data,
     movieIsLoading: state.getMovie.isLoading,
+    movieError: state.getMovie.errors,
     episodes: state.getEpisodes.data,
     episodesIsLoading: state.getEpisodes.isLoading,
+    episodesError: state.getEpisodes.errors,
   };
 };
 
