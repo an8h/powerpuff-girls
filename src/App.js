@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import Store from "./redux/Store";
 import Routes from "./routes/Routes";
-import "./App.scss";
+import "./style/_main.scss";
 
 const App = () => {
   return (
