@@ -82,12 +82,12 @@ class Home extends React.Component<Props> {
 const mapStateToProps = (state, ownProps) => {
   return {
     ...ownProps,
-    movie: state.getMovie.data,
-    movieIsLoading: state.getMovie.isLoading,
-    movieError: state.getMovie.errors,
-    episodes: state.getEpisodes.data,
-    episodesIsLoading: state.getEpisodes.isLoading,
-    episodesError: state.getEpisodes.errors,
+    movie: state.movie.data,
+    movieIsLoading: state.movie.isLoading,
+    movieError: state.movie.errors,
+    episodes: state.episodes.data,
+    episodesIsLoading: state.episodes.isLoading,
+    episodesError: state.episodes.errors,
   };
 };
 

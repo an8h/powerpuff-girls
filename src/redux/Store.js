@@ -15,10 +15,11 @@ import {
 import reduxThunk from "redux-thunk";
 import * as actionCreators from "./Actions";
 import DefaultState from "./DefaultState";
-import * as reducers from "./Reducers";
+import { getMovie, getEpisodes } from "./Reducers";
 
 const rootReducer = combineReducers({
-  ...reducers,
+  movie: getMovie,
+  episodes: getEpisodes,
 });
 const enhancers = compose(
   applyMiddleware(reduxThunk),

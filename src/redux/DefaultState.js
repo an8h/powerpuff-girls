@@ -12,9 +12,4 @@ export default {
     isLoading: false,
     errors: [],
   },
-  episode: {
-    data: [],
-    isLoading: false,
-    errors: [],
-  },
 };
