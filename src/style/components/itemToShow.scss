@@ -29,3 +29,9 @@
     align-self: center;
   }
 }
+
+@-moz-document url-prefix() {
+  .image {
+    width: auto;
+  }
+}
